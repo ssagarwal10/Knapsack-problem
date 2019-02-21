@@ -1,7 +1,3 @@
-//SHUBHAM AGARWAL
-//130
-
-//DAA Assignment 4
 
 //TITLE:Design and implement algorithm for the Knapsack problem.
 
@@ -228,55 +224,3 @@ Profit		60	100	120
 Instance	1	1	0	
 
 The maximum profit is 160
-
-
-//TIME COMPLEXITY:
-
-For N = 1: time is a constant (denoted by 1)
-
-Otherwise: time to mergesort N elements = time to mergesort N/2 elements plus
-time to merge two arrays each N/2 elements.
-
-Time to merge two arrays each N/2 elements is linear, i.e. N
-
-Thus we have:
-
-(1) T(1) = 1
-
-(2) T(N) = 2T(N/2) + N
-
-Next we will solve this recurrence relation. First we divide (2) by N:
-
-(3) T(N) / N = T(N/2) / (N/2) + 1
-
-N is a power of two, so we can write
-
-(4) T(N/2) / (N/2) = T(N/4) / (N/4) +1
-(5) T(N/4) / (N/4) = T(N/8) / (N/8) +1
-
-(6) T(N/8) / (N/8) = T(N/16) / (N/16) +1
-
-(7) ……
-(8) T(2) / 2 = T(1) / 1 + 1
-
-Now we add equations (3) through (8) : the sum of their left-hand sides
-will be equal to the sum of their right-hand sides:
-
-T(N) / N + T(N/2) / (N/2) + T(N/4) / (N/4) + … + T(2)/2 =
-
-T(N/2) / (N/2) + T(N/4) / (N/4) + ….+ T(2) / 2 + T(1) / 1 + LogN
-
-(LogN is the sum of 1s in the right-hand sides)
-
-After crossing the equal term, we get
-
-(9) T(N)/N = T(1)/1 + LogN
-
-T(1) is 1, hence we obtain
-
-(10) T(N) = N + NlogN = O(NlogN)
-
-Hence the complexity of the MergeSort algorithm is O(NlogN).
-
-Along with mergesort, one loop of n iterations is present.
-As only the dominant factor is considered, the time complexity for the rest part can be ignored.
